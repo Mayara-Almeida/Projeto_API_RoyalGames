@@ -24,13 +24,6 @@
   <ItemGroup>
     <Folder Include="Applications\Autenticacao\" />
     <Folder Include="Applications\Conversoes\" />
-    <Folder Include="Applications\Services\" />
-    <Folder Include="Applications\Regras\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repositores\" />
   </ItemGroup>
 
 </Project>
