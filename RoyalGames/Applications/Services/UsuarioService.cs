@@ -119,7 +119,7 @@ namespace RoyalGames.Applications.Services
 
             Usuario usuarioComMesmoEmail = _repository.ObterPorEmail(usuarioDto.Email);
 
-            if(usuarioComMesmoEmail != null || usuarioComMesmoEmail.UsuarioID != id)
+            if(usuarioComMesmoEmail != null && usuarioComMesmoEmail.UsuarioID != id)
             {
                 throw new DomainException("Já existe um usuário com esse e-mail.");
             }
