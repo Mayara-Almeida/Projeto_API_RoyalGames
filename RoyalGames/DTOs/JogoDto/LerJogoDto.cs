@@ -13,6 +13,7 @@
         public bool? StatusJogo { get; set; }
 
         // Classificaçãoindicativa
+        public int? ClassificacaoIndicativaID { get; set; }
         public string? Classificacao {  get; set; }
 
         // Gênero

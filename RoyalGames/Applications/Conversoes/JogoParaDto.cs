@@ -13,7 +13,20 @@ namespace RoyalGames.Applications.Conversoes
                 Nome = jogo.Nome,
                 Preco = jogo.Preco,
                 Descricao = jogo.Descricao,
-                StatusJogo = jogo.StatusJogo
+                StatusJogo = jogo.StatusJogo,
+
+                ClassificacaoIndicativaID = jogo.ClassificacaoIndicativaID,
+                Classificacao = jogo.ClassificacaoIndicativa.Classificacao,
+
+                GenerosIds = jogo.Genero.Select(genero => genero.GeneroID).ToList(),
+                Generos = jogo.Genero.Select(genero => genero.Nome).ToList(),
+
+                PlataformasIds = jogo.Plataforma.Select(plataforma => plataforma.PlataformaID).ToList(),
+                Plataformas = jogo.Plataforma.Select(plataforma => plataforma.Nome).ToList(),
+
+                UsuarioID = jogo.UsuarioID,
+                UsuarioNome = jogo.Usuario.Nome,
+                UsuarioEmail = jogo.Usuario.Email
             };
         }
     }
