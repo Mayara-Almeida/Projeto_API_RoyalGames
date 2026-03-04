@@ -20,16 +20,20 @@ namespace RoyalGames.Repositores
 
         public Usuario? ObterPorId(int id)
         {
+            // find performa melhor com chave primária
             return _context.Usuario.Find(id);
         }
 
         public Usuario? ObterPorEmail(string email)
         {
+            // FirstOrDefault -> retorna nosso usuário do banco
             return _context.Usuario.FirstOrDefault(usuario => usuario.Email == email);
         }
 
         public bool EmailExiste(string email)
         {
+            // Any -> retorna um true ou false para validar se 
+            // existe ALGUM usuário com esse e-mail
             return _context.Usuario.Any(usuario => usuario.Email == email);
         }
 
@@ -41,10 +45,10 @@ namespace RoyalGames.Repositores
 
         public void Atualizar(Usuario usuario)
         {
-            // Verificar se usuário existe
-            Usuario? usuarioBanco = _context.Usuario.FirstOrDefault(usuarioAux => usuarioAux.UsuarioID == usuario.UsuarioID);
+            Usuario? usuarioBanco =
+                _context.Usuario.FirstOrDefault(usuarioAux => usuarioAux.UsuarioID == usuario.UsuarioID);
 
-            if(usuarioBanco == null)
+            if (usuarioBanco == null)
             {
                 return;
             }
@@ -58,16 +62,17 @@ namespace RoyalGames.Repositores
 
         public void Remover(int id)
         {
-            // Verificar se o usuário existe
-            Usuario usuario = _context.Usuario.FirstOrDefault(usuarioAux  => usuarioAux.UsuarioID == id);
+            Usuario? usuario =
+                _context.Usuario.FirstOrDefault(usuarioAux => usuarioAux.UsuarioID == id);
 
-            if(usuario == null)
+            if (usuario == null)
             {
-                return; 
+                return;
             }
 
             _context.Usuario.Remove(usuario);
             _context.SaveChanges();
         }
+
     }
 }
