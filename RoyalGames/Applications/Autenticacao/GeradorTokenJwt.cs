@@ -4,7 +4,6 @@ using System.Security.Claims;
 using System.Text;
 using RoyalGames.Domains;
 using RoyalGames.Exceptions;
-using RoyalGames.Exceptions;
 
 namespace RoyalGames.Applications.Autenticacao
 {
