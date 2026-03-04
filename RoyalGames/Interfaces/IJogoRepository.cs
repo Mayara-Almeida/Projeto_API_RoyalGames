@@ -7,7 +7,7 @@ namespace RoyalGames.Interfaces
 
         List<Jogo> Listar();
 
-        Jogo? ObterPorId(int id);  //**
+        Jogo? ObterPorId(int id);  
 
         byte[] ObterPorImagem(int id);
 
