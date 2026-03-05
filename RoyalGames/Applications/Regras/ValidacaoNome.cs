@@ -2,13 +2,13 @@
 
 namespace RoyalGames.Applications.Regras
 {
-    public class ValidaçãoNome
+    public class ValidacaoNome
     {
         public static void ValidarNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
             {
-                throw new DomainException("Nome inválido.");
+                throw new DomainException("Nome é obrigatório.");
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace RoyalGames.Applications.Conversoes
 {
-    public class ImagemParaByte
+    public class ImagemParaBytes
     {
 
         public static byte[] ConverterImagem(IFormFile imagem)

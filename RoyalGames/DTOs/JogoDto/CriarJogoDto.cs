@@ -10,7 +10,7 @@
 
         public IFormFile Imagem { get; set; } = null!;
 
-        public int? ClassificacaoIndicativaID { get; set; }
+        public int ClassificacaoIndicativaID { get; set; }
 
         public List<int> GenerosIds { get; set; } = new();
 

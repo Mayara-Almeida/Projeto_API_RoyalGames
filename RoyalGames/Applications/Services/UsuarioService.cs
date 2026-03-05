@@ -87,7 +87,7 @@ namespace RoyalGames.Applications.Services
         public LerUsuarioDto Adicionar(CriarUsuarioDto usuarioDto)
         {
             ValidarEmail(usuarioDto.Email);
-            ValidaçãoNome.ValidarNome(usuarioDto.Nome);
+            ValidacaoNome.ValidarNome(usuarioDto.Nome);
 
             if(_repository.EmailExiste(usuarioDto.Email))
             {
