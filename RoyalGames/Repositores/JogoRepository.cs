@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RoyalGames.Contexts;
 using RoyalGames.Domains;
+using RoyalGames.Interfaces;
 
 namespace RoyalGames.Repositores
 {
-    public class JogoRepository
+    public class JogoRepository : IJogoRepository
     {
         private readonly RoyalGamesContext _context;
 
@@ -141,7 +142,7 @@ namespace RoyalGames.Repositores
             _context.SaveChanges(); 
         }
 
-        public void remover(int id)
+        public void Remover(int id)
         {
             Jogo? jogo = _context.Jogo.FirstOrDefault(jogo => jogo.JogoID == id);
 
