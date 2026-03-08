@@ -223,7 +223,7 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/formm-data": {
+            "multipart/form-data": {
               "schema": {
                 "type": "object",
                 "properties": {

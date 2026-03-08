@@ -16,7 +16,7 @@ namespace RoyalGames.Applications.Conversoes
                 StatusJogo = jogo.StatusJogo,
 
                 ClassificacaoIndicativaID = jogo.ClassificacaoIndicativaID,
-                Classificacao = jogo.ClassificacaoIndicativa.Classificacao,
+                Classificacao = jogo.ClassificacaoIndicativa?.Classificacao,
 
                 GenerosIds = jogo.Genero.Select(genero => genero.GeneroID).ToList(),
                 Generos = jogo.Genero.Select(genero => genero.Nome).ToList(),
@@ -25,8 +25,8 @@ namespace RoyalGames.Applications.Conversoes
                 Plataformas = jogo.Plataforma.Select(plataforma => plataforma.Nome).ToList(),
 
                 UsuarioID = jogo.UsuarioID,
-                UsuarioNome = jogo.Usuario.Nome,
-                UsuarioEmail = jogo.Usuario.Email
+                UsuarioNome = jogo.Usuario?.Nome,
+                UsuarioEmail = jogo.Usuario?.Email
             };
         }
     }

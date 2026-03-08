@@ -7,7 +7,7 @@ namespace RoyalGames.Applications.Regras
         public static void ValidarHorario()
         {
             var agora = DateTime.Now.TimeOfDay; // Pega horário atual
-            var abertura = new TimeSpan(16, 0, 0); 
+            var abertura = new TimeSpan(10, 0, 0); 
             var fechamento = new TimeSpan(23, 0, 0);
 
             // Verificar se o estabelecimento está aberto
