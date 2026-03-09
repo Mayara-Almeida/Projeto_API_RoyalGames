@@ -2,8 +2,8 @@
   {
     "ContainingType": "RoyalGames.Controllers.AutenticacaoController",
     "Method": "Login",
-    "RelativePath": "api/Autenticacao/Login",
-    "HttpMethod": "GET",
+    "RelativePath": "api/Autenticacao/login",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

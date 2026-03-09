@@ -14,10 +14,10 @@ namespace RoyalGames.Controllers
 
         public AutenticacaoController(AutenticacaoService service)
         {
-            _service = service; 
+            _service = service;
         }
 
-        [HttpGet("Login")]
+        [HttpPost("login")]
         public ActionResult<TokenDto> Login(LoginDto loginDto)
         {
             try

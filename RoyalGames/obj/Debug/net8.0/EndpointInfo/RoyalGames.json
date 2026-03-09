@@ -5,8 +5,8 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Autenticacao/Login": {
-      "get": {
+    "/api/Autenticacao/login": {
+      "post": {
         "tags": [
           "Autenticacao"
         ],
