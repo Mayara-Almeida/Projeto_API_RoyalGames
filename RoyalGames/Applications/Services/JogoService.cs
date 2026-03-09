@@ -1,19 +1,20 @@
 ﻿using RoyalGames.Applications.Conversoes;
 using RoyalGames.Applications.Regras;
 using RoyalGames.Domains;
+using RoyalGames.DTOs.AutenticacaoDto;
 using RoyalGames.DTOs.JogoDto;
 using RoyalGames.Exceptions;
 using RoyalGames.Interfaces;
+using System.Security.Claims;
 
 namespace RoyalGames.Applications.Services
 {
     public class JogoService
     {
         private readonly IJogoRepository _repository;
-
         public JogoService(IJogoRepository repository)
         {
-            _repository = repository; 
+            _repository = repository;
         }
 
         public List<LerJogoDto> Listar()
@@ -98,7 +99,6 @@ namespace RoyalGames.Applications.Services
 
         public LerJogoDto Adicionar(CriarJogoDto jogoDto, int usuarioId)
         {
-            ValidarAutenticacao.ValidarAutenticacaoLogin(usuarioId);
             ValidarCadastro(jogoDto);
 
             // Verificar se já existe um jogo com aquele nome
@@ -115,11 +115,12 @@ namespace RoyalGames.Applications.Services
                 Descricao = jogoDto.Descricao,
                 Imagem = ImagemParaBytes.ConverterImagem(jogoDto.Imagem),
                 StatusJogo = true, // Ao criar sempre inicia como true
-                UsuarioID = usuarioId
+                UsuarioID = usuarioId,
+                ClassificacaoIndicativaID = jogoDto.ClassificacaoIndicativaID
             };
 
             // Adicionar Classificação indicativa, gênero e plataforma ao jogo
-            _repository.Adicionar(jogo, jogoDto.ClassificacaoIndicativaID, jogoDto.GenerosIds, jogoDto.PlataformasIds);
+            _repository.Adicionar(jogo, jogoDto.GenerosIds, jogoDto.PlataformasIds);
 
             return JogoParaDto.ConverterParaDto(jogo);
         }
@@ -137,7 +138,7 @@ namespace RoyalGames.Applications.Services
 
             if(_repository.NomeExiste(jogoDto.Nome, jogoIdAtual: id))
             {
-                throw new DomainException("Já existe outro produto com esse nome.");
+                throw new DomainException("Já existe outro jogo com esse nome.");
             }
 
             if (jogoDto.Preco < 0)
@@ -175,7 +176,7 @@ namespace RoyalGames.Applications.Services
                 jogoBanco.StatusJogo = jogoDto.StatusJogo.Value;
             }
 
-            _repository.Atualizar(jogoBanco, jogoDto.ClassificacaoIndicativaID, jogoDto.GenerosIds, jogoDto.PlataformasIds);
+            _repository.Atualizar(jogoBanco, jogoDto.GenerosIds, jogoDto.PlataformasIds);
             return JogoParaDto.ConverterParaDto(jogoBanco);
         }
 

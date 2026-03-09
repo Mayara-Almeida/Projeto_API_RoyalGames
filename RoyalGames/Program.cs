@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using RoyalGames.Applications.Autenticacao;
+using RoyalGames.Applications.Regras;
 using RoyalGames.Applications.Services;
 using RoyalGames.Contexts;
 using RoyalGames.Interfaces;
@@ -54,6 +55,11 @@ builder.Services.AddScoped<UsuarioService>();
 // Jogo
 builder.Services.AddScoped<IJogoRepository, JogoRepository>();
 builder.Services.AddScoped<JogoService>();
+
+// Plataforma
+// Jogo
+builder.Services.AddScoped<IPlataformaRepository, PlataformaRepository>();
+builder.Services.AddScoped<PlataformaService>();
 
 //JWT
 builder.Services.AddScoped<GeradorTokenJwt>();
@@ -110,6 +116,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(chave)
             )
+        };
+
+        options.Events = new JwtBearerEvents // Interceptar um evento do sistema de autenticação
+        {
+            OnChallenge = context => // Evento de quando o usuário não está autenticado
+            {
+                context.HandleResponse(); // Interrompe o comportamento padrão para tratar manualmente
+                context.Response.StatusCode = 401; // Define o StatusCode do HTTP
+                context.Response.ContentType = "text/plain; charset=utf-8"; // Define tipo de resposta(podia ser json também)
+                return context.Response.WriteAsync("Usuário não autenticado."); // Mensagem personalizada para esse evento
+            }
         };
     });
 

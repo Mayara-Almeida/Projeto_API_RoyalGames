@@ -61,10 +61,8 @@ namespace RoyalGames.Repositores
         }
 
         // Para cada jogo adicionado é necessário passar uma clasificação, um gênero e uma plataforma
-        public void Adicionar(Jogo jogo, int classificacaoIndicativaID, List<int> generosIds, List<int> plataformasIds)
+        public void Adicionar(Jogo jogo, List<int> generosIds, List<int> plataformasIds)
         {
-            jogo.ClassificacaoIndicativaID = classificacaoIndicativaID;
-
             List<Genero> generos = _context.Genero
                 .Where(genero => generosIds.Contains(genero.GeneroID))
                 .ToList();
@@ -79,10 +77,10 @@ namespace RoyalGames.Repositores
             _context.SaveChanges();
         }
 
-        public void Atualizar(Jogo jogo, int classificacaoIndicativaID, List<int> generosIds, List<int> plataformasIds)
+        public void Atualizar(Jogo jogo, List<int> generosIds, List<int> plataformasIds)
         {
             Jogo? jogoBanco = _context.Jogo
-                .Include(jogo => jogo.ClassificacaoIndicativaID)
+                .Include(jogo => jogo.ClassificacaoIndicativa)
                 .Include(jogo => jogo.Genero)
                 .Include(jogo => jogo.Plataforma)
                 .FirstOrDefault(jogoAux => jogoAux.JogoID == jogo.JogoID);

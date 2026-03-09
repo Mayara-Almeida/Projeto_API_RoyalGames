@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RoyalGames.Applications.Services;
+using RoyalGames.DTOs.AutenticacaoDto;
 using RoyalGames.DTOs.JogoDto;
 using RoyalGames.Exceptions;
 using System.Security.Claims;
@@ -93,7 +94,7 @@ namespace RoyalGames.Controllers
         }
 
         [HttpPut("{id}")]
-        [Consumes("multipart/formm-data")]
+        [Consumes("multipart/form-data")]
         [Authorize]
         public ActionResult Atuzalizar(int id, [FromForm] AtualizarJogoDto jogoDto)
         {
