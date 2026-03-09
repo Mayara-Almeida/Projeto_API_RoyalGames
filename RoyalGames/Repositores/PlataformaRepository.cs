@@ -31,7 +31,7 @@ namespace RoyalGames.Repositores
 
             if(plataformaIdAtual.HasValue)
             {
-                // Faz uma consulta no banco de plataformas onde o id esteja diferente do id passado na requisição
+                // Faz uma consulta no banco de plataformas onde o id esteja diferente do valor do id passado na requisição
                 consulta = consulta.Where(plataforma => plataforma.PlataformaID != plataformaIdAtual.Value);
             }
             // Retorna caso haja um mesmo produto com aquele nome
