@@ -20,7 +20,7 @@ namespace RoyalGames.Controllers
             _service = service;
         }
 
-        // Autenticação do usuário
+        // Autenticação do usuário - para armazenar quem cadastrou o jogo
         private int ObterUsuarioIdLogado()
         {
             // Busca no token/claims o valor armazenado como id do usuário
@@ -83,7 +83,7 @@ namespace RoyalGames.Controllers
         {
             try
             {
-                int usuarioId = ObterUsuarioIdLogado();
+                int usuarioId = ObterUsuarioIdLogado(); // Armazena quem cadastrou o jogo
                 _service.Adicionar(jogoDto, usuarioId);
                 return StatusCode(201);
             }

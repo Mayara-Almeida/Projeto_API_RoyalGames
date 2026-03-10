@@ -57,9 +57,12 @@ builder.Services.AddScoped<IJogoRepository, JogoRepository>();
 builder.Services.AddScoped<JogoService>();
 
 // Plataforma
-// Jogo
 builder.Services.AddScoped<IPlataformaRepository, PlataformaRepository>();
 builder.Services.AddScoped<PlataformaService>();
+
+// Classificação Indicativa
+builder.Services.AddScoped<IClassificacaoIndicativaRepository, ClassificacaoIndicativaRepository>();
+builder.Services.AddScoped<ClassificacaoIndicativaService>();
 
 //JWT
 builder.Services.AddScoped<GeradorTokenJwt>();

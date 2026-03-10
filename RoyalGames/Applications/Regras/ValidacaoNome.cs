@@ -11,5 +11,13 @@ namespace RoyalGames.Applications.Regras
                 throw new DomainException("Nome é obrigatório.");
             }
         }
+
+        public static void ValidarClassificacao(string classificacao)
+        {
+            if (string.IsNullOrWhiteSpace(classificacao))
+            {
+                throw new DomainException("Classificação é obrigatória.");
+            }
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace RoyalGames.Applications.Services
 
         public void Adicionar(CriarClassificacaoIndicativaDto criarDto)
         {
-            ValidacaoNome.ValidarNome(criarDto.Classificacao);
+            ValidacaoNome.ValidarClassificacao(criarDto.Classificacao);
 
             if(_repository.ClassificacaoExiste(criarDto.Classificacao))
             {
@@ -65,7 +65,7 @@ namespace RoyalGames.Applications.Services
 
         public void Atualizar(int id, CriarClassificacaoIndicativaDto criarDto)
         {
-            ValidacaoNome.ValidarNome(criarDto.Classificacao);
+            ValidacaoNome.ValidarClassificacao(criarDto.Classificacao);
 
             ClassificacaoIndicativa classificacaoIndicativaBanco = _repository.ObterPorId(id);
 
@@ -76,7 +76,7 @@ namespace RoyalGames.Applications.Services
 
             if (_repository.ClassificacaoExiste(criarDto.Classificacao, classificacaoIndicativaIdAtual: id))
             {
-                throw new DomainException("Já existe outra plataforma com esse nome.");
+                throw new DomainException("Já existe outra classificação indicativa com essa idade.");
             }
 
             classificacaoIndicativaBanco.Classificacao = criarDto.Classificacao;
@@ -84,6 +84,15 @@ namespace RoyalGames.Applications.Services
         }
 
         public void Remover(int id)
-        { }
+        {
+            ClassificacaoIndicativa classificacaoIndicativaBanco = _repository.ObterPorId(id);
+
+            if (classificacaoIndicativaBanco == null)
+            {
+                throw new DomainException("Classificação indicativa não encontrada.");
+            }
+
+            _repository.Remover(id);
+        }
     }
 }

@@ -26,6 +26,105 @@
     ]
   },
   {
+    "ContainingType": "RoyalGames.Controllers.ClassificacaoIndicativaController",
+    "Method": "Listar",
+    "RelativePath": "api/ClassificacaoIndicativa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[RoyalGames.DTOs.ClassificacaoIndicativaDto.LerClassificacaoIndicativaDto, RoyalGames, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.ClassificacaoIndicativaController",
+    "Method": "Adicionar",
+    "RelativePath": "api/ClassificacaoIndicativa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "criarDto",
+        "Type": "RoyalGames.DTOs.ClassificacaoIndicativaDto.CriarClassificacaoIndicativaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.ClassificacaoIndicativaController",
+    "Method": "ObterPorId",
+    "RelativePath": "api/ClassificacaoIndicativa/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "RoyalGames.DTOs.ClassificacaoIndicativaDto.LerClassificacaoIndicativaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.ClassificacaoIndicativaController",
+    "Method": "Atualizar",
+    "RelativePath": "api/ClassificacaoIndicativa/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "criarDto",
+        "Type": "RoyalGames.DTOs.ClassificacaoIndicativaDto.CriarClassificacaoIndicativaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.ClassificacaoIndicativaController",
+    "Method": "Remover",
+    "RelativePath": "api/ClassificacaoIndicativa/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RoyalGames.Controllers.JogoController",
     "Method": "Listar",
     "RelativePath": "api/Jogo",
