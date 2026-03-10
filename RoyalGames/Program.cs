@@ -64,6 +64,10 @@ builder.Services.AddScoped<PlataformaService>();
 builder.Services.AddScoped<IClassificacaoIndicativaRepository, ClassificacaoIndicativaRepository>();
 builder.Services.AddScoped<ClassificacaoIndicativaService>();
 
+// Log de Alteração do jogo
+builder.Services.AddScoped<ILogAlteracaoJogoRepository, LogAlteracaoJogoRepository>();
+builder.Services.AddScoped<LogAlteracaoJogoService>();
+
 //JWT
 builder.Services.AddScoped<GeradorTokenJwt>();
 builder.Services.AddScoped<AutenticacaoService>();

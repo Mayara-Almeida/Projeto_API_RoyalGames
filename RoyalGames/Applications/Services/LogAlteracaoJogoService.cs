@@ -28,5 +28,22 @@ namespace RoyalGames.Applications.Services
 
             return listaLogJogo;
         }
+
+        public List<LerLogJogoDto> ListarPorProduto(int jogoId)
+        {
+            List<Log_AlteracaoJogo> logs = _repository.ListarPorProduto(jogoId);
+
+            List<LerLogJogoDto> listaLogJogo = logs.Select(log => new LerLogJogoDto
+            {
+                LogId = log.Log_AlteracaJogoID,
+                JogoId = log.JogoID,
+                NomeAnterior = log.NomeAnterior,
+                PrecoAnterior = log.Precoanterior,
+                DataAlteracao = log.DataAlteracao
+            }).ToList();
+
+            return listaLogJogo;
+
+        }
     }
 }

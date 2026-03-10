@@ -305,6 +305,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "RoyalGames.Controllers.LogAlteracaoJogoController",
+    "Method": "Listar",
+    "RelativePath": "api/LogAlteracaoJogo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.LogAlteracaoJogoController",
+    "Method": "ListarPorProduto",
+    "RelativePath": "api/LogAlteracaoJogo/Produto/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RoyalGames.Controllers.PlataformaController",
     "Method": "Listar",
     "RelativePath": "api/Plataforma",
