@@ -1,4 +1,4 @@
-﻿using RoyalGames.Applications.Regras;
+﻿    using RoyalGames.Applications.Regras;
 using RoyalGames.Domains;
 using RoyalGames.DTOs.PlataformaDto;
 using RoyalGames.Exceptions;
@@ -58,7 +58,7 @@ namespace RoyalGames.Applications.Services
 
             Plataforma plataforma = new Plataforma
             {
-                Nome = criarDto.Nome,
+                Nome = criarDto.Nome
             };
 
             _repository.Adicionar(plataforma);
@@ -66,7 +66,7 @@ namespace RoyalGames.Applications.Services
 
         public void Atualizar(int id, CriarPlataformaDto criarDto)
         {
-            ValidacaoNome.ValidarNome(criarDto.Nome);
+             
 
             // Consulta para ver se existe uma plataforma com esse id
             Plataforma plataformaBanco = _repository.ObterPorId(id);
