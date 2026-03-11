@@ -316,7 +316,7 @@
   },
   {
     "ContainingType": "RoyalGames.Controllers.LogAlteracaoJogoController",
-    "Method": "ListarPorProduto",
+    "Method": "ListarPorJogo",
     "RelativePath": "api/LogAlteracaoJogo/Produto/{id}",
     "HttpMethod": "GET",
     "IsController": true,

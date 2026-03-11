@@ -6,6 +6,6 @@ namespace RoyalGames.Interfaces
     {
         List<Log_AlteracaoJogo> Listar();
 
-        List<Log_AlteracaoJogo> ListarPorProduto(int jogoId);
+        List<Log_AlteracaoJogo> ListarPorJogo(int jogoId);
     }
 }

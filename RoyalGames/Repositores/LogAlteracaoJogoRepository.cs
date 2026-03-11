@@ -21,7 +21,7 @@ namespace RoyalGames.Repositores
             return log;
         }
 
-        public List<Log_AlteracaoJogo> ListarPorProduto(int jogoId)
+        public List<Log_AlteracaoJogo> ListarPorJogo(int jogoId)
         {
             List<Log_AlteracaoJogo> alteracoesJogo =
                 _context.Log_AlteracaoJogo

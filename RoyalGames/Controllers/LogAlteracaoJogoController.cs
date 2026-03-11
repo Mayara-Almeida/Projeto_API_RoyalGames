@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RoyalGames.Applications.Services;
+using RoyalGames.DTOs.JogoDto;
 using RoyalGames.DTOs.LogAlteracaoJogoDto;
+using RoyalGames.Exceptions;
 
 namespace RoyalGames.Controllers
 {
@@ -11,7 +13,7 @@ namespace RoyalGames.Controllers
     {
         private readonly LogAlteracaoJogoService _service;
 
-        public LogAlteracaoJogoController (LogAlteracaoJogoService service)
+        public LogAlteracaoJogoController(LogAlteracaoJogoService service)
         {
             _service = service;
         }
@@ -23,9 +25,10 @@ namespace RoyalGames.Controllers
         }
 
         [HttpGet("Produto/{id}")]
-        public ActionResult ListarPorProduto(int id)
+        public ActionResult ListarPorJogo(int id)
         {
-            return Ok(_service.ListarPorProduto(id));
+            return Ok(_service.ListarPorJogo(id));
         }
     }
+    
 }

@@ -1,5 +1,6 @@
 ﻿using RoyalGames.Domains;
 using RoyalGames.DTOs.LogAlteracaoJogoDto;
+using RoyalGames.Exceptions;
 using RoyalGames.Interfaces;
 
 namespace RoyalGames.Applications.Services
@@ -29,9 +30,14 @@ namespace RoyalGames.Applications.Services
             return listaLogJogo;
         }
 
-        public List<LerLogJogoDto> ListarPorProduto(int jogoId)
+        public List<LerLogJogoDto> ListarPorJogo(int jogoId)
         {
-            List<Log_AlteracaoJogo> logs = _repository.ListarPorProduto(jogoId);
+            List<Log_AlteracaoJogo> logs = _repository.ListarPorJogo(jogoId);
+
+            if(logs == null)
+            {
+                throw new DomainException("Jogo não encontrado.");
+            }
 
             List<LerLogJogoDto> listaLogJogo = logs.Select(log => new LerLogJogoDto
             {
