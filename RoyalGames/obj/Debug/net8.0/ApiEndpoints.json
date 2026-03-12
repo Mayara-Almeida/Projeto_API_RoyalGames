@@ -26,6 +26,105 @@
     ]
   },
   {
+    "ContainingType": "RoyalGames.Controllers.GeneroController",
+    "Method": "Listar",
+    "RelativePath": "api/Genero",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[RoyalGames.DTOs.CategoriaDto.LerGeneroDto, RoyalGames, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.GeneroController",
+    "Method": "Adicionar",
+    "RelativePath": "api/Genero",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "criarDto",
+        "Type": "RoyalGames.DTOs.CategoriaDto.CriarGeneroDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.GeneroController",
+    "Method": "ObterPorId",
+    "RelativePath": "api/Genero/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "RoyalGames.DTOs.CategoriaDto.LerGeneroDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.GeneroController",
+    "Method": "Atualizar",
+    "RelativePath": "api/Genero/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "criarDto",
+        "Type": "RoyalGames.DTOs.CategoriaDto.CriarGeneroDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RoyalGames.Controllers.GeneroController",
+    "Method": "Remover",
+    "RelativePath": "api/Genero/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RoyalGames.Controllers.UsuarioController",
     "Method": "Listar",
     "RelativePath": "api/Usuario",

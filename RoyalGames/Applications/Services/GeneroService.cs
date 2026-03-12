@@ -26,7 +26,7 @@ namespace RoyalGames.Applications.Services
             }).ToList();
 
             // Retorna a lista já convertida em DTO
-            return generoDto;
+            return genero;
         }
 
         public LerGeneroDto ObterPorId(int id)
@@ -35,7 +35,7 @@ namespace RoyalGames.Applications.Services
 
             if (genero == null)
             {
-                throw new DomainException("Genero não encontrado");
+                throw new DomainException("Gênero não encontrado.");
             }
 
             LerGeneroDto generoDto = new LerGeneroDto

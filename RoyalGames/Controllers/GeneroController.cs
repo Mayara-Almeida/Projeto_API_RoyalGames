@@ -28,14 +28,15 @@ namespace RoyalGames.Controllers
         [HttpGet("{id}")]
         public ActionResult<LerGeneroDto?> ObterPorId(int id)
         {
-            LerGeneroDto? categoria = _service.ObterPorId(id);
-
-            if (categoria == null)
+            try
             {
-                return NotFound();
+                LerGeneroDto genero = _service.ObterPorId(id);
+                return Ok(genero);
             }
-
-            return Ok(categoria);
+            catch (DomainException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         [HttpPost]

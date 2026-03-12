@@ -51,6 +51,10 @@ builder.Services.AddDbContext<RoyalGamesContext>(options => options.UseSqlServer
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
 
+// Gênero
+builder.Services.AddScoped<IGeneroRepository, GeneroRepository>();
+builder.Services.AddScoped<GeneroService>();
+
 // JWT
 builder.Services.AddScoped<GeradorTokenJwt>();
 builder.Services.AddScoped<AutenticacaoService>();
@@ -107,6 +111,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(chave)
             )
+        };
+
+        options.Events = new JwtBearerEvents // Interceptar um evento do sistema de autenticação
+        {
+            OnChallenge = context => // Evento de quando o usuário não está autenticado
+            {
+                context.HandleResponse(); // Interrompe o comportamento padrão para tratar manualmente
+                context.Response.StatusCode = 401; // Define o StatusCode do HTTP
+                context.Response.ContentType = "text/plain; charset=utf-8"; // Define tipo de resposta(podia ser json também)
+                return context.Response.WriteAsync("Usuário não autenticado."); // Mensagem personalizada para esse evento
+            }
         };
     });
 
