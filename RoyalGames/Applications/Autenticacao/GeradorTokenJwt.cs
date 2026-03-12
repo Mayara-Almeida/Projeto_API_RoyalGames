@@ -4,11 +4,6 @@ using RoyalGames.Exceptions;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-<<<<<<< HEAD
-using RoyalGames.Domains;
-using RoyalGames.Exceptions;
-=======
->>>>>>> develop
 
 namespace RoyalGames.Applications.Autenticacao
 {

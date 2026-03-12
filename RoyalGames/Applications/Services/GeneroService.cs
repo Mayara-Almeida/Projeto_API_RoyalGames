@@ -61,7 +61,7 @@ namespace RoyalGames.Applications.Services
 
             if (_repository.NomeExiste(criarDto.Nome))
             {
-                throw new DomainException("Categoria já existente.");
+                throw new DomainException("Gênero já existente.");
             }
 
             Genero genero = new Genero
@@ -80,13 +80,13 @@ namespace RoyalGames.Applications.Services
 
             if (GeneroBanco == null)
             {
-                throw new DomainException("Genero não encontrado.");
+                throw new DomainException("Gênero não encontrado.");
             }
 
             // categoriaIdAtual: id -> categoriaIdAtual recebe id
             if (_repository.NomeExiste(criarDto.Nome, generoIdAtual: id))
             {
-                throw new DomainException("Já existe outro genero com esse nome.");
+                throw new DomainException("Já existe outro gênero com esse nome.");
             }
 
             GeneroBanco.Nome = criarDto.Nome;
@@ -99,7 +99,7 @@ namespace RoyalGames.Applications.Services
 
             if (GeneroBanco == null)
             {
-                throw new DomainException("Genero não encontrado.");
+                throw new DomainException("Gênero não encontrado.");
             }
 
             _repository.Remover(id);

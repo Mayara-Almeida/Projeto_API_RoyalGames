@@ -6,11 +6,10 @@ using Microsoft.OpenApi.Models;
 using RoyalGames.Applications.Autenticacao;
 using RoyalGames.Applications.Regras;
 using RoyalGames.Applications.Services;
+using RoyalGames.Contexts;
 using RoyalGames.Interfaces;
 using RoyalGames.Repositores;
 using System.Text;
-using RoyalGames.Contexts;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,23 +45,13 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// chamar nossa conexão com o banco aqui na program
+// Conexão com banco
 builder.Services.AddDbContext<RoyalGamesContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 // Usuário
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
 
-<<<<<<< HEAD
-// Gênero
-builder.Services.AddScoped<IGeneroRepository, GeneroRepository>();
-builder.Services.AddScoped<GeneroService>();
-
-// JWT
-builder.Services.AddScoped<GeradorTokenJwt>();
-builder.Services.AddScoped<AutenticacaoService>();
-
-=======
 // Jogo
 builder.Services.AddScoped<IJogoRepository, JogoRepository>();
 builder.Services.AddScoped<JogoService>();
@@ -75,6 +64,10 @@ builder.Services.AddScoped<PlataformaService>();
 builder.Services.AddScoped<IClassificacaoIndicativaRepository, ClassificacaoIndicativaRepository>();
 builder.Services.AddScoped<ClassificacaoIndicativaService>();
 
+// Gênero
+builder.Services.AddScoped<IGeneroRepository, GeneroRepository>();
+builder.Services.AddScoped<GeneroService>();
+
 // Log de Alteração do jogo
 builder.Services.AddScoped<ILogAlteracaoJogoRepository, LogAlteracaoJogoRepository>();
 builder.Services.AddScoped<LogAlteracaoJogoService>();
@@ -82,7 +75,6 @@ builder.Services.AddScoped<LogAlteracaoJogoService>();
 //JWT
 builder.Services.AddScoped<GeradorTokenJwt>();
 builder.Services.AddScoped<AutenticacaoService>();
->>>>>>> develop
 
 // Configura o sistema de autenticação da aplicação.
 // Aqui estamos dizendo que o tipo de autenticação padrão será JWT Bearer.
@@ -136,21 +128,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 Encoding.UTF8.GetBytes(chave)
             )
         };
-<<<<<<< HEAD
-
-        options.Events = new JwtBearerEvents // Interceptar um evento do sistema de autenticação
-        {
-            OnChallenge = context => // Evento de quando o usuário não está autenticado
-            {
-                context.HandleResponse(); // Interrompe o comportamento padrão para tratar manualmente
-                context.Response.StatusCode = 401; // Define o StatusCode do HTTP
-                context.Response.ContentType = "text/plain; charset=utf-8"; // Define tipo de resposta(podia ser json também)
-                return context.Response.WriteAsync("Usuário não autenticado."); // Mensagem personalizada para esse evento
-            }
-        };
-    });
-=======
->>>>>>> develop
 
         options.Events = new JwtBearerEvents // Interceptar um evento do sistema de autenticação
         {
@@ -165,7 +142,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

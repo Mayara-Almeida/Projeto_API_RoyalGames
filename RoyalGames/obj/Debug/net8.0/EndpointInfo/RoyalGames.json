@@ -5,11 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-<<<<<<< HEAD
-    "/api/Autenticacao/login": {
-=======
     "/api/Autenticacao": {
->>>>>>> develop
       "post": {
         "tags": [
           "Autenticacao"
@@ -57,17 +53,10 @@
         }
       }
     },
-<<<<<<< HEAD
-    "/api/Genero": {
-      "get": {
-        "tags": [
-          "Genero"
-=======
     "/api/ClassificacaoIndicativa": {
       "get": {
         "tags": [
           "ClassificacaoIndicativa"
->>>>>>> develop
         ],
         "responses": {
           "200": {
@@ -77,11 +66,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-<<<<<<< HEAD
-                    "$ref": "#/components/schemas/LerGeneroDto"
-=======
                     "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
->>>>>>> develop
                   }
                 }
               },
@@ -89,11 +74,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-<<<<<<< HEAD
-                    "$ref": "#/components/schemas/LerGeneroDto"
-=======
                     "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
->>>>>>> develop
                   }
                 }
               },
@@ -101,11 +82,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-<<<<<<< HEAD
-                    "$ref": "#/components/schemas/LerGeneroDto"
-=======
                     "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
->>>>>>> develop
                   }
                 }
               }
@@ -115,39 +92,23 @@
       },
       "post": {
         "tags": [
-<<<<<<< HEAD
-          "Genero"
-=======
           "ClassificacaoIndicativa"
->>>>>>> develop
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CriarGeneroDto"
-=======
                 "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
->>>>>>> develop
               }
             },
             "text/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CriarGeneroDto"
-=======
                 "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
->>>>>>> develop
               }
             },
             "application/*+json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CriarGeneroDto"
-=======
                 "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
->>>>>>> develop
               }
             }
           }
@@ -159,17 +120,10 @@
         }
       }
     },
-<<<<<<< HEAD
-    "/api/Genero/{id}": {
-      "get": {
-        "tags": [
-          "Genero"
-=======
     "/api/ClassificacaoIndicativa/{id}": {
       "get": {
         "tags": [
           "ClassificacaoIndicativa"
->>>>>>> develop
         ],
         "parameters": [
           {
@@ -188,29 +142,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-<<<<<<< HEAD
-                  "$ref": "#/components/schemas/LerGeneroDto"
-=======
                   "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
->>>>>>> develop
                 }
               },
               "application/json": {
                 "schema": {
-<<<<<<< HEAD
-                  "$ref": "#/components/schemas/LerGeneroDto"
-=======
                   "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
->>>>>>> develop
                 }
               },
               "text/json": {
                 "schema": {
-<<<<<<< HEAD
-                  "$ref": "#/components/schemas/LerGeneroDto"
-=======
                   "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
->>>>>>> develop
                 }
               }
             }
@@ -219,11 +161,7 @@
       },
       "put": {
         "tags": [
-<<<<<<< HEAD
-          "Genero"
-=======
           "ClassificacaoIndicativa"
->>>>>>> develop
         ],
         "parameters": [
           {
@@ -240,29 +178,17 @@
           "content": {
             "application/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CriarGeneroDto"
-=======
                 "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
->>>>>>> develop
               }
             },
             "text/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CriarGeneroDto"
-=======
                 "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
->>>>>>> develop
               }
             },
             "application/*+json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CriarGeneroDto"
-=======
                 "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
->>>>>>> develop
               }
             }
           }
@@ -275,10 +201,175 @@
       },
       "delete": {
         "tags": [
-<<<<<<< HEAD
-          "Genero"
-=======
           "ClassificacaoIndicativa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Genero": {
+      "get": {
+        "tags": [
+          "Genero"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerGeneroDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerGeneroDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerGeneroDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Genero"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarGeneroDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarGeneroDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarGeneroDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Genero/{id}": {
+      "get": {
+        "tags": [
+          "Genero"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerGeneroDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerGeneroDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerGeneroDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Genero"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarGeneroDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarGeneroDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarGeneroDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Genero"
         ],
         "parameters": [
           {
@@ -773,7 +864,6 @@
       "delete": {
         "tags": [
           "Plataforma"
->>>>>>> develop
         ],
         "parameters": [
           {
@@ -1037,9 +1127,6 @@
   },
   "components": {
     "schemas": {
-<<<<<<< HEAD
-      "CriarGeneroDto": {
-=======
       "CriarClassificacaoIndicativaDto": {
         "type": "object",
         "properties": {
@@ -1050,8 +1137,17 @@
         },
         "additionalProperties": false
       },
+      "CriarGeneroDto": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CriarPlataformaDto": {
->>>>>>> develop
         "type": "object",
         "properties": {
           "nome": {
@@ -1079,12 +1175,6 @@
         },
         "additionalProperties": false
       },
-<<<<<<< HEAD
-      "LerGeneroDto": {
-        "type": "object",
-        "properties": {
-          "generoID": {
-=======
       "LerClassificacaoIndicativaDto": {
         "type": "object",
         "properties": {
@@ -1093,6 +1183,20 @@
             "format": "int32"
           },
           "classificacao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LerGeneroDto": {
+        "type": "object",
+        "properties": {
+          "generoID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
             "type": "string",
             "nullable": true
           }
@@ -1181,7 +1285,6 @@
         "type": "object",
         "properties": {
           "plataformaID": {
->>>>>>> develop
             "type": "integer",
             "format": "int32"
           },
@@ -1208,12 +1311,8 @@
             "nullable": true
           },
           "statusUsuario": {
-<<<<<<< HEAD
             "type": "boolean",
             "nullable": true
-=======
-            "type": "boolean"
->>>>>>> develop
           }
         },
         "additionalProperties": false
