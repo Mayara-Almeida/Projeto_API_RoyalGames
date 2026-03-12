@@ -2,10 +2,9 @@
 {
     public class LoginDto
     {
-        //estou criando uma string email onde ela tem que receber diferente de nulo 
+        // Fazer login com e-mail e senha
         public string Email { get; set; } = null!;
-
-        //o mesmo na senha 
+       
         public string Senha { get; set; } = null!;
     }
 }

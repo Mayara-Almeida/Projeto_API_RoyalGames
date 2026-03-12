@@ -17,18 +17,28 @@ namespace RoyalGames.Controllers
             _service = service;
         }
 
+<<<<<<< HEAD
         [HttpPost("login")]
+=======
+        [HttpPost]
+>>>>>>> develop
         public ActionResult<TokenDto> Login(LoginDto loginDto)
         {
             try
             {
                 var token = _service.Login(loginDto);
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
                 return Ok(token);
             }
             catch (DomainException ex)
             {
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
                 return BadRequest(ex.Message);
             }
         }

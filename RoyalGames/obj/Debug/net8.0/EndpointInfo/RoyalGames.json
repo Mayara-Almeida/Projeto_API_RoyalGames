@@ -5,7 +5,11 @@
     "version": "1.0"
   },
   "paths": {
+<<<<<<< HEAD
     "/api/Autenticacao/login": {
+=======
+    "/api/Autenticacao": {
+>>>>>>> develop
       "post": {
         "tags": [
           "Autenticacao"
@@ -53,10 +57,17 @@
         }
       }
     },
+<<<<<<< HEAD
     "/api/Genero": {
       "get": {
         "tags": [
           "Genero"
+=======
+    "/api/ClassificacaoIndicativa": {
+      "get": {
+        "tags": [
+          "ClassificacaoIndicativa"
+>>>>>>> develop
         ],
         "responses": {
           "200": {
@@ -66,7 +77,11 @@
                 "schema": {
                   "type": "array",
                   "items": {
+<<<<<<< HEAD
                     "$ref": "#/components/schemas/LerGeneroDto"
+=======
+                    "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
+>>>>>>> develop
                   }
                 }
               },
@@ -74,7 +89,11 @@
                 "schema": {
                   "type": "array",
                   "items": {
+<<<<<<< HEAD
                     "$ref": "#/components/schemas/LerGeneroDto"
+=======
+                    "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
+>>>>>>> develop
                   }
                 }
               },
@@ -82,7 +101,11 @@
                 "schema": {
                   "type": "array",
                   "items": {
+<<<<<<< HEAD
                     "$ref": "#/components/schemas/LerGeneroDto"
+=======
+                    "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
+>>>>>>> develop
                   }
                 }
               }
@@ -92,23 +115,39 @@
       },
       "post": {
         "tags": [
+<<<<<<< HEAD
           "Genero"
+=======
+          "ClassificacaoIndicativa"
+>>>>>>> develop
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CriarGeneroDto"
+=======
+                "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
+>>>>>>> develop
               }
             },
             "text/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CriarGeneroDto"
+=======
+                "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
+>>>>>>> develop
               }
             },
             "application/*+json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CriarGeneroDto"
+=======
+                "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
+>>>>>>> develop
               }
             }
           }
@@ -120,10 +159,17 @@
         }
       }
     },
+<<<<<<< HEAD
     "/api/Genero/{id}": {
       "get": {
         "tags": [
           "Genero"
+=======
+    "/api/ClassificacaoIndicativa/{id}": {
+      "get": {
+        "tags": [
+          "ClassificacaoIndicativa"
+>>>>>>> develop
         ],
         "parameters": [
           {
@@ -142,17 +188,29 @@
             "content": {
               "text/plain": {
                 "schema": {
+<<<<<<< HEAD
                   "$ref": "#/components/schemas/LerGeneroDto"
+=======
+                  "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
+>>>>>>> develop
                 }
               },
               "application/json": {
                 "schema": {
+<<<<<<< HEAD
                   "$ref": "#/components/schemas/LerGeneroDto"
+=======
+                  "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
+>>>>>>> develop
                 }
               },
               "text/json": {
                 "schema": {
+<<<<<<< HEAD
                   "$ref": "#/components/schemas/LerGeneroDto"
+=======
+                  "$ref": "#/components/schemas/LerClassificacaoIndicativaDto"
+>>>>>>> develop
                 }
               }
             }
@@ -161,7 +219,11 @@
       },
       "put": {
         "tags": [
+<<<<<<< HEAD
           "Genero"
+=======
+          "ClassificacaoIndicativa"
+>>>>>>> develop
         ],
         "parameters": [
           {
@@ -178,17 +240,29 @@
           "content": {
             "application/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CriarGeneroDto"
+=======
+                "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
+>>>>>>> develop
               }
             },
             "text/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CriarGeneroDto"
+=======
+                "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
+>>>>>>> develop
               }
             },
             "application/*+json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CriarGeneroDto"
+=======
+                "$ref": "#/components/schemas/CriarClassificacaoIndicativaDto"
+>>>>>>> develop
               }
             }
           }
@@ -201,7 +275,505 @@
       },
       "delete": {
         "tags": [
+<<<<<<< HEAD
           "Genero"
+=======
+          "ClassificacaoIndicativa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Jogo": {
+      "get": {
+        "tags": [
+          "Jogo"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerJogoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerJogoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerJogoDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Jogo"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "Preco": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Descricao": {
+                    "type": "string"
+                  },
+                  "Imagem": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ClassificacaoIndicativaID": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "GenerosIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  },
+                  "PlataformasIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "Nome": {
+                  "style": "form"
+                },
+                "Preco": {
+                  "style": "form"
+                },
+                "Descricao": {
+                  "style": "form"
+                },
+                "Imagem": {
+                  "style": "form"
+                },
+                "ClassificacaoIndicativaID": {
+                  "style": "form"
+                },
+                "GenerosIds": {
+                  "style": "form"
+                },
+                "PlataformasIds": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Jogo/{id}": {
+      "get": {
+        "tags": [
+          "Jogo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerJogoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerJogoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerJogoDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Jogo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "Preco": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Descricao": {
+                    "type": "string"
+                  },
+                  "Imagem": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ClassificacaoIndicativaID": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "GenerosIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  },
+                  "PlataformasIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  },
+                  "StatusJogo": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "encoding": {
+                "Nome": {
+                  "style": "form"
+                },
+                "Preco": {
+                  "style": "form"
+                },
+                "Descricao": {
+                  "style": "form"
+                },
+                "Imagem": {
+                  "style": "form"
+                },
+                "ClassificacaoIndicativaID": {
+                  "style": "form"
+                },
+                "GenerosIds": {
+                  "style": "form"
+                },
+                "PlataformasIds": {
+                  "style": "form"
+                },
+                "StatusJogo": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Jogo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Jogo/{id}/imagem": {
+      "get": {
+        "tags": [
+          "Jogo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LogAlteracaoJogo": {
+      "get": {
+        "tags": [
+          "LogAlteracaoJogo"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LogAlteracaoJogo/Produto/{id}": {
+      "get": {
+        "tags": [
+          "LogAlteracaoJogo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Plataforma": {
+      "get": {
+        "tags": [
+          "Plataforma"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerPlataformaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerPlataformaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LerPlataformaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Plataforma"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlataformaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlataformaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlataformaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Plataforma/{id}": {
+      "get": {
+        "tags": [
+          "Plataforma"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerPlataformaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerPlataformaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LerPlataformaDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Plataforma"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlataformaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlataformaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlataformaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Plataforma"
+>>>>>>> develop
         ],
         "parameters": [
           {
@@ -465,7 +1037,21 @@
   },
   "components": {
     "schemas": {
+<<<<<<< HEAD
       "CriarGeneroDto": {
+=======
+      "CriarClassificacaoIndicativaDto": {
+        "type": "object",
+        "properties": {
+          "classificacao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CriarPlataformaDto": {
+>>>>>>> develop
         "type": "object",
         "properties": {
           "nome": {
@@ -493,10 +1079,109 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "LerGeneroDto": {
         "type": "object",
         "properties": {
           "generoID": {
+=======
+      "LerClassificacaoIndicativaDto": {
+        "type": "object",
+        "properties": {
+          "classificacaoIndicativaID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "classificacao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LerJogoDto": {
+        "type": "object",
+        "properties": {
+          "jogoID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "preco": {
+            "type": "number",
+            "format": "double"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusJogo": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "classificacaoIndicativaID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "classificacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "generosIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "generos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "plataformasIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "plataformas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "usuarioID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "usuarioNome": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuarioEmail": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LerPlataformaDto": {
+        "type": "object",
+        "properties": {
+          "plataformaID": {
+>>>>>>> develop
             "type": "integer",
             "format": "int32"
           },
@@ -523,8 +1208,12 @@
             "nullable": true
           },
           "statusUsuario": {
+<<<<<<< HEAD
             "type": "boolean",
             "nullable": true
+=======
+            "type": "boolean"
+>>>>>>> develop
           }
         },
         "additionalProperties": false

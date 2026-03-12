@@ -1,8 +1,10 @@
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using RoyalGames.Applications.Autenticacao;
+using RoyalGames.Applications.Regras;
 using RoyalGames.Applications.Services;
 using RoyalGames.Interfaces;
 using RoyalGames.Repositores;
@@ -51,6 +53,7 @@ builder.Services.AddDbContext<RoyalGamesContext>(options => options.UseSqlServer
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
 
+<<<<<<< HEAD
 // Gênero
 builder.Services.AddScoped<IGeneroRepository, GeneroRepository>();
 builder.Services.AddScoped<GeneroService>();
@@ -59,6 +62,27 @@ builder.Services.AddScoped<GeneroService>();
 builder.Services.AddScoped<GeradorTokenJwt>();
 builder.Services.AddScoped<AutenticacaoService>();
 
+=======
+// Jogo
+builder.Services.AddScoped<IJogoRepository, JogoRepository>();
+builder.Services.AddScoped<JogoService>();
+
+// Plataforma
+builder.Services.AddScoped<IPlataformaRepository, PlataformaRepository>();
+builder.Services.AddScoped<PlataformaService>();
+
+// Classificação Indicativa
+builder.Services.AddScoped<IClassificacaoIndicativaRepository, ClassificacaoIndicativaRepository>();
+builder.Services.AddScoped<ClassificacaoIndicativaService>();
+
+// Log de Alteração do jogo
+builder.Services.AddScoped<ILogAlteracaoJogoRepository, LogAlteracaoJogoRepository>();
+builder.Services.AddScoped<LogAlteracaoJogoService>();
+
+//JWT
+builder.Services.AddScoped<GeradorTokenJwt>();
+builder.Services.AddScoped<AutenticacaoService>();
+>>>>>>> develop
 
 // Configura o sistema de autenticação da aplicação.
 // Aqui estamos dizendo que o tipo de autenticação padrão será JWT Bearer.
@@ -112,6 +136,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 Encoding.UTF8.GetBytes(chave)
             )
         };
+<<<<<<< HEAD
 
         options.Events = new JwtBearerEvents // Interceptar um evento do sistema de autenticação
         {
@@ -124,7 +149,20 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             }
         };
     });
+=======
+>>>>>>> develop
 
+        options.Events = new JwtBearerEvents // Interceptar um evento do sistema de autenticação
+        {
+            OnChallenge = context => // Evento de quando o usuário não está autenticado
+            {
+                context.HandleResponse(); // Interrompe o comportamento padrão para tratar manualmente
+                context.Response.StatusCode = 401; // Define o StatusCode do HTTP
+                context.Response.ContentType = "text/plain; charset=utf-8"; // Define tipo de resposta(podia ser json também)
+                return context.Response.WriteAsync("Usuário não autenticado."); // Mensagem personalizada para esse evento
+            }
+        };
+    });
 
 var app = builder.Build();
 
