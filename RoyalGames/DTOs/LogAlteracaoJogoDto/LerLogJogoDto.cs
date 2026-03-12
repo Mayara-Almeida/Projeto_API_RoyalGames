@@ -4,7 +4,7 @@
     {
         public int LogId { get; set; }
 
-        public int? JogoId {  get; set; }
+        public int? JogoID {  get; set; }
 
         public string NomeAnterior { get; set; } = null!;
 

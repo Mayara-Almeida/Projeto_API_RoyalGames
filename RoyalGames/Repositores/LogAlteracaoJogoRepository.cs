@@ -13,6 +13,11 @@ namespace RoyalGames.Repositores
             _context = context;
         }
 
+        public bool JogoExiste(int jogoId)
+        {
+            return _context.Jogo.Any(j => j.JogoID == jogoId);
+        }
+
         public List<Log_AlteracaoJogo> Listar()
         {
             List<Log_AlteracaoJogo> log =

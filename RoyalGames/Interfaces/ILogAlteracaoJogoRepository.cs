@@ -7,5 +7,7 @@ namespace RoyalGames.Interfaces
         List<Log_AlteracaoJogo> Listar();
 
         List<Log_AlteracaoJogo> ListarPorJogo(int jogoId);
+
+        bool JogoExiste(int jogoId);
     }
 }

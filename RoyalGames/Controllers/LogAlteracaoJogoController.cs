@@ -27,7 +27,15 @@ namespace RoyalGames.Controllers
         [HttpGet("Produto/{id}")]
         public ActionResult ListarPorJogo(int id)
         {
-            return Ok(_service.ListarPorJogo(id));
+            try
+            {
+                return Ok(_service.ListarPorJogo(id));
+            }
+            catch (DomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
     }
     

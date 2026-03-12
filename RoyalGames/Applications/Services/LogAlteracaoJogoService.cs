@@ -1,7 +1,9 @@
-﻿using RoyalGames.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using RoyalGames.Domains;
 using RoyalGames.DTOs.LogAlteracaoJogoDto;
 using RoyalGames.Exceptions;
 using RoyalGames.Interfaces;
+using RoyalGames.Repositores;
 
 namespace RoyalGames.Applications.Services
 {
@@ -21,7 +23,7 @@ namespace RoyalGames.Applications.Services
             List<LerLogJogoDto> listaLogJogo = logs.Select(log => new LerLogJogoDto
             {
                 LogId = log.Log_AlteracaJogoID,
-                JogoId = log.JogoID,
+                JogoID = log.JogoID,
                 NomeAnterior = log.NomeAnterior,
                 PrecoAnterior = log.Precoanterior,
                 DataAlteracao = log.DataAlteracao
@@ -32,17 +34,17 @@ namespace RoyalGames.Applications.Services
 
         public List<LerLogJogoDto> ListarPorJogo(int jogoId)
         {
-            List<Log_AlteracaoJogo> logs = _repository.ListarPorJogo(jogoId);
-
-            if(logs == null)
+            if (!_repository.JogoExiste(jogoId))
             {
                 throw new DomainException("Jogo não encontrado.");
             }
 
+            List<Log_AlteracaoJogo> logs = _repository.ListarPorJogo(jogoId);
+
             List<LerLogJogoDto> listaLogJogo = logs.Select(log => new LerLogJogoDto
             {
                 LogId = log.Log_AlteracaJogoID,
-                JogoId = log.JogoID,
+                JogoID = log.JogoID,
                 NomeAnterior = log.NomeAnterior,
                 PrecoAnterior = log.Precoanterior,
                 DataAlteracao = log.DataAlteracao
