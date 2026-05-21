@@ -26,7 +26,9 @@ namespace RoyalGames.Applications.Conversoes
 
                 UsuarioID = jogo.UsuarioID,
                 UsuarioNome = jogo.Usuario?.Nome,
-                UsuarioEmail = jogo.Usuario?.Email
+                UsuarioEmail = jogo.Usuario?.Email,
+
+                ImagemUrl = $"Jogo/{jogo.JogoID}/imagem"
             };
         }
     }

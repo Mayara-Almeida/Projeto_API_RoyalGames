@@ -1277,6 +1277,10 @@
           "usuarioEmail": {
             "type": "string",
             "nullable": true
+          },
+          "imagemUrl": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
